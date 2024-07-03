@@ -1,0 +1,22 @@
+Solicitud a la Ruta Protegida:
+
+El cliente hace una solicitud a una ruta que utiliza el controlador dashboard.
+Por ejemplo, podría ser una ruta como GET /dashboard.
+Aplicación del Middleware de Autenticación:
+
+Antes de que la solicitud llegue al controlador dashboard, pasa por el middleware de autenticación.
+El middleware se asegura de que la solicitud incluya un token JWT válido.
+Validación del Token en el Middleware:
+
+El middleware extrae el token JWT de la cabecera de autorización (Authorization).
+Verifica que el token sea válido utilizando jwt.verify y la clave secreta (process.env.JWT_SECRET).
+Si el token es válido, extrae la información del usuario (en este caso, id y username) del token decodificado y la añade al objeto req como req.user.
+Paso al Siguiente Middleware o Controlador:
+
+Después de la validación exitosa, el middleware llama a next() para pasar el control al siguiente middleware o controlador en la cadena de manejo de solicitudes.
+En este caso, el siguiente es el controlador dashboard.
+Acceso a los Datos del Usuario en el Controlador:
+
+El controlador dashboard puede ahora acceder a los datos del usuario a través de req.user.
+Utiliza req.user.username para personalizar la respuesta.
+Genera un número aleatorio (luckyNumber) y envía una respuesta JSON que incluye el nombre del usuario y el número de la suerte.

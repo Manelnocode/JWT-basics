@@ -1,0 +1,30 @@
+
+// CONTROLADOR LOGIN
+
+// Hacemos una peticion post desde postman en la que enviamos un body con el nombre y la contraseña.
+// Creamos un id y despues un token (JWT) que contendra el id + usuario + secret con el que firmaremos el token y como respuesta enviaremos la linea 27. 
+
+
+// CONTROLADOR DASHBOARD
+// primero obtenemos el valor de authorization del header de la solicitud y lo guardamos en una variable.
+// Luego creamos funcionalidad para admitir el header solamente como lo necesitamos (con Bearer delante y el token)
+
+// extraemos el token y lo dividimos para poder extraer solamente la segunda parte que es la clave y la guardamos en una variable.
+
+// verificamos el token utilizando un metodo de la libreria de jwt llamado verify en el que le pasamos el token y el secret.
+
+
+
+Workflow creado: 
+
+Generar un usuario funciona de la siguiente manera:
+
+Enviamos una peticion POST al servidor en la que proveemos los datos del usuario como el nombre y la contraseña. 
+
+En el servidor comprobamos si el username y la contraseña han sido seteados.
+
+Si es asi, creamos un nuevo usuario y generamos un token.
+
+Este token creado, será el que le de acceso al usuario a nuestra parte exclusiva para usuarios que en este caso es la pagina de dashboard.
+
+El usuario guarda el token en su local stoage lo cual le da acceso a dashboard.
