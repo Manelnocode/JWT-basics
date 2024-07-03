@@ -1,0 +1,5 @@
+El motivo de la distribucion de los errores es la siguiente:
+
+En cada archivo vamos a tener la funcionalidad del respectivo error definida.
+
+Vamos a tener un archivo principal encargado de hacer la distribucion de errores.
